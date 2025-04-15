@@ -1,0 +1,15 @@
+mkl==2023.1
+numpy==1.23.1
+huggingface-hub==0.20.2
+diffusers==0.18.2
+matplotlib==3.10.1
+potpourri3d==1.0.0
+pysdf==0.1.9
+PyYAML==6.0.2
+scenepic==1.1.0
+scipy==1.11.1
+smplx==0.1.28
+trimesh==3.6.20
+chumpy==0.70
+wandb==0.18.2
+tensorboard==2.10.1

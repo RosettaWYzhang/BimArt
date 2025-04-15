@@ -1,0 +1,9 @@
+# Ignore everything in 'experiments/' directory
+experiments/*
+# Ignore other irrelevant files
+data/
+assets/mano_v1_2
+**/__pycache__/*
+out/
+*.sh
+*.ini

@@ -1,0 +1,5 @@
+inherit: config_files/train_contact_config.yaml
+exp_name: contact_model_pretrained
+num_epochs: 0
+load_pretrained: true
+pretrained_model_path: model_final.pth

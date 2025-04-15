@@ -1,0 +1,57 @@
+inherit: null
+exp_name: motion_model
+save_root_dir: experiments/
+use_job_id: true
+data:
+  base_dir: data/arctic_processed_data # processed data path
+  split: all # choose between all, train, test
+  stat_dict_path: assets/motion_norm_stats.pkl  # normalization path
+  action_dim: 1200
+  pred_horizon: 64
+  global_state_dim: 7
+  base_frame: 100
+  end_frame: null # set end frame when we want to do fast test
+  hand_keypoints: 100
+  hand_index_path: assets/part_fps_hand_index_100.npy
+  num_workers: 8
+  bps_feature_dim: 3
+  num_bps_points: 512
+model:
+  diffusion_step_embed_dim: 256
+  null_bps_token_dim: 128
+  null_contact_token_dim: 128
+  beta: squaredcos_cap_v2
+  noise_scheduler: ddpm
+  ff_size: 1024
+  num_layers: 8
+  num_heads: 4
+  dropout: 0.1
+  activation: gelu
+  latent_cond_dim: 512
+train:
+  num_diffusion_iters: 50
+  start_epochs: 0
+  num_epochs: 200
+  warmup_steps: 100
+  load_pretrained: false
+  pretrain_model_name: model_final.pth
+  train_batch_size: 100
+  save_checkpt_epoch: 100
+  contact_on_prob: 0.5
+  lr: 1.0e-4
+  use_wandb: false
+  wandb_pj_name: bimart_motion_model
+  wandb_entity: enter_your_credential
+test: 
+  eval: true
+  eval_batch_size: 1
+  save_output: false
+  n_sample: 3
+  contact_config_file: config_files/contact_inference.yaml
+viz:
+  viz_prefix: ""
+  fit_mano: true
+  fit_mano_steps: 4000
+  norm_high: 0.15
+
+

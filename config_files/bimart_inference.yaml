@@ -1,0 +1,21 @@
+inherit: config_files/train_motion_config.yaml
+exp_name: motion_model_pretrained
+log: false
+use_job_id: false
+data:
+  split: test
+  num_workers: 0
+train:
+  load_pretrained: true
+  pretrain_model_name: model_final.pth
+viz:
+  viz_prefix: "inference"
+test:
+  n_sample: 1
+  start_sample: 0
+  save_output: true 
+  eval_batch_size: 1
+  eval: true
+  use_cost_guidance: true
+  cfg_guide_strength: 0.5
+  contact_config_file: config_files/contact_inference.yaml

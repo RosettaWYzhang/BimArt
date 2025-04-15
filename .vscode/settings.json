@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./model_arch",
+        "./contact_prior/pointnet2"
+    ]
+}
